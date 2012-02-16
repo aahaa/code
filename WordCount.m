@@ -31,13 +31,13 @@ int main(int argc, char *argV[])
 	int textSize = [text length];
 	
 	int slovTexta = 0;
-	int strokTexta = 0;
+	int strokTexta = 1;
 	
 	NSString *temp1 ;
 	NSString *temp2 ;
 	
 	int i;
-	for (i = 0 ; i<textSize-1 ; i++)
+	for (i = 0 ; i<textSize-1; i++)
 	{
  	 //diapazon tekushego simvola
 	 NSRange range = NSMakeRange(i, 1);
@@ -47,7 +47,10 @@ int main(int argc, char *argV[])
 	 //tekushiy simvol
 	 temp1 = [text substringWithRange: range];
 	 //sleduishiy simvol
-	 temp2 = [text substringWithRange: range1];
+	 
+	  temp2 = [text substringWithRange: range1];
+	  
+	 
 	
 	 BOOL proverkaPerenosa = [temp1 isEqualToString: @"\n"];
 	 if (proverkaPerenosa == YES)
@@ -61,8 +64,8 @@ int main(int argc, char *argV[])
 	}
 	
 	NSLog (@"Lines : %i", strokTexta);
-	NSLog (@"Words : %i", slovTexta);
-	NSLog (@"Chars : %i", textSize - strokTexta*2 +1);
+	NSLog (@"Words : %i", slovTexta+1);
+	NSLog (@"Chars : %i", textSize - strokTexta*2 +2);
 	
 	
 int pause;
