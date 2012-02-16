@@ -31,13 +31,14 @@ int main(int argc, char *argV[])
 	int textSize = [text length];
 	
 	int slovTexta = 0;
-	int strokTexta = 1;
+	int strokTexta = 0;
 	
 	NSString *temp1 ;
 	NSString *temp2 ;
 	
+	text = [text stringByAppendingString:@"\n"];
 	int i;
-	for (i = 0 ; i<textSize-1; i++)
+	for (i = 0 ; i<textSize; i++)
 	{
  	 //diapazon tekushego simvola
 	 NSRange range = NSMakeRange(i, 1);
@@ -64,8 +65,8 @@ int main(int argc, char *argV[])
 	}
 	
 	NSLog (@"Lines : %i", strokTexta);
-	NSLog (@"Words : %i", slovTexta+1);
-	NSLog (@"Chars : %i", textSize - strokTexta*2 +2);
+	NSLog (@"Words : %i", slovTexta);
+	NSLog (@"Chars : %i", textSize - strokTexta*2);
 	
 	
 int pause;
